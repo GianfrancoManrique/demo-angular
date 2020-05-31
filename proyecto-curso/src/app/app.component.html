@@ -1,0 +1,21 @@
+
+<fieldset>
+  <legend>New Person</legend>
+    <label for="">Fullname: </label>
+    <input type="text" (input)="captureFullName($event)" ><br>
+    <label for="">Email: </label>
+    <input type="email" (input)="captureEmail($event)"><br>
+    <label for="">Password: </label>
+    <input type="password" (input)="capturePassword($event)">
+    <button (click)="addPerson()" [disabled]="!isEnabled">New Person</button>
+</fieldset>
+<fieldset>
+  <legend>List of Persons</legend>
+  <table>
+  
+  <app-listperson *ngFor="let person of persons;let indexPerson=index " [person]="person"
+
+  ></app-listperson>
+  </table>  
+</fieldset>
+
